@@ -101,7 +101,7 @@ const ReactSimpleImageViewer = (props: IProps) => {
         { props.closeComponent || "×" }
       </span>
 
-      {props.src.length > 1 && (
+      {(props.src.length > 1 && currentIndex > 0) && (
         <span
           className={`${styles.navigation} ${styles.prev} react-simple-image-viewer__previous`}
           onClick={() => changeImage(-1)}
@@ -110,7 +110,7 @@ const ReactSimpleImageViewer = (props: IProps) => {
         </span>
       )}
 
-      {props.src.length > 1 && (
+      {(props.src.length > 1 && (currentIndex + 1) < props.src.length) && (
         <span
           className={`${styles.navigation} ${styles.next} react-simple-image-viewer__next`}
           onClick={() => changeImage(1)}
